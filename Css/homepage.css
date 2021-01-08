@@ -1,0 +1,53 @@
+body{
+    
+    background-color: #d6d6d6;
+}
+#container{
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 500px;
+    font-size: 18px;
+    margin-top: 40px;
+}
+h1{
+    text-align: center;
+}
+#container div{
+    /* padding-left: 15%; */
+    width: 80%;
+    margin: 5px auto;
+    display: flex;
+    text-align: center;
+}
+#container div p{
+    flex: 50%;
+}
+button{
+    display: block;
+    margin: 5px auto ;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 10px;
+    text-align: cenetr;
+    background-color: #919294;
+    width: 20%;
+    height: 28px;
+    cursor: pointer;
+}
+
+button#logout{
+    background-color:rgb(219, 47, 47);
+}
+button#logout:hover{
+    background-color:rgb(145, 7, 7);
+}
+
+img{
+    display: block;
+    margin: 6px auto;
+    height: 100px;
+    width: 90px;
+}

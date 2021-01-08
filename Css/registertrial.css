@@ -1,0 +1,76 @@
+body{
+    background-image: url("../Image/loginBackground.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #707070;
+}
+#container{
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    font-size: 18px;
+    margin-top: 40px;
+}
+h1{
+    text-align: center;
+}
+#container div{
+    padding-left: 10px;
+    margin: 4px auto;
+}
+label,input{
+    display: block;
+    width: 90%;
+}
+input{
+    height:25px;
+    margin-top:7px;
+}
+div.row{
+    display: flex;
+}
+div.row div{
+    flex: 50%;
+}
+button{
+    display: block;
+    margin: 10px auto ;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 10px;
+    text-align: cenetr;
+    background-color: #919294;
+    width: 40%;
+    height: 28px;
+    cursor: pointer;
+}
+hr{
+    width: 80%;
+    border-color: rgb(8, 148, 8);
+    display: block;
+    margin: 2px auto;
+}
+button#addPhoto{
+    background-color: rgb(72, 138, 212);
+    width: 80%;
+}
+button#register{
+    background-color:rgb(64, 179, 64);
+}
+button#addPhoto:hover{
+    background-color:rgb(6, 65, 133);
+    width: 80%;
+}
+button#register:hover{
+    background-color:rgb(7, 97, 7);;
+}
+button#back{
+    background-color:rgb(219, 47, 47);
+}
+button#back:hover{
+    background-color:rgb(145, 7, 7);
+}
