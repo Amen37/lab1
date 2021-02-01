@@ -1,3 +1,12 @@
+<?php
+$error=$success="";
+require "./db_connect.php";
+require "./Interface/account.php";
+require "./Class/user.php";
+require "./Logic/function.php";
+require "Logic/main.logic.php";
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,37 +16,39 @@
     <link rel="stylesheet" href="Css/register.css">
 </head>
 <body>
-    <form action="">
+    <form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST" enctype="multipart/form-data">
     <div id="container">
         <h1>Create Account</h1>
         <div>
             <label for="firstName">First Name</label>
-            <input type="text" id="firstName">
+            <input type="text" name="firstName">
         </div>
         <div>
             <label for="lastName">Last Name</label>
-            <input type="text" id="lastName">
+            <input type="text" name="lastName">
         </div>
         <div>
             <label for="email">Email</label>
-            <input type="email" id="email">
+            <input type="email" name="email">
         </div>
         <div>
             <label for="city">City</label>
-            <input type="text" id="city">
+            <input type="text" name="city">
         </div>
         <div>
             <label for="password">Password</label>
-            <input type="password" id="password">
+            <input type="password" name="password">
         </div>
         <div>
             <label for="con_password">Confirm Password</label>
-            <input type="password" id="con_password">
+            <input type="password" name="con_password">
         </div>
-        <input type="file" id="photo">
+        <p class="error"><?php echo $error;?></p>
+        <p class="success"><?php echo $success;?></p>
+        <input type="file" name="photo" id="photo">
         <button type="button" id="addPhoto" onclick="uploadPhoto()">Add Photo</button>
         <div class="row"> 
-            <button type="submit" id="register">Create Account</button>
+            <button type="submit" id="register" name="register">Create Account</button>
             <button type="button" id="back" onclick="backToLogin()">Back</button>
         </div> 
        

@@ -15,6 +15,11 @@ body{
     font-size: 18px;
     border-radius: 15px;
 }
+@media screen and (max-width: 600px) {
+    #container{
+        width: 60%;
+    }
+}
 h1{
     text-align: center;
 }
@@ -25,6 +30,9 @@ h1{
 label,input{
     display: block;
     width: 90%;
+}
+label:hover{
+    color: #141313;
 }
 input{
     height:25px;
@@ -65,7 +73,7 @@ a{
     color: grey;
 }
 a:hover{
-    color: rgb(8, 148, 8);
+    color: rgb(4, 107, 4);
 }
 div#links{
     display: flex;
@@ -74,6 +82,19 @@ div#links{
     margin-left: 10px;
     padding-top: 2px;
 }
+@media screen and (max-width: 600px){
+    div#links{
+        display: block;
+        margin: 0px auto;
+    }
+    a{
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding-top: 10px;
+    }
+}
+
 
 hr{
     width: 80%;
@@ -90,4 +111,8 @@ hr{
     left: 0px;
     width: 100%;
     height: 100%;
+}
+.error{
+    text-align: center;
+    color: rgb(219, 30, 30);
 }

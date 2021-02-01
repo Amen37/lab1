@@ -1,3 +1,11 @@
+<?php
+$error="";
+require "./db_connect.php";
+require "./Interface/account.php";
+require "./Class/user.php";
+require "./Logic/function.php";
+require "Logic/main.logic.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,27 +15,28 @@
     <link rel="stylesheet" href="Css/login.css">
 </head>
 <body>
-    <form action="">
+    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
     <div id="container">
         <h1>Login</h1>
         <div>
             <label for="email">Email</label>
-            <input type="email" id="email">
+            <input type="email" name="email">
         </div>
         <div>
             <label for="password">Password</label>
-            <input type="password" id="password">
+            <input type="password" name="password">
         </div>
         <div id="check-box">
             
             <input type="checkbox" id="checkbox">
             <label for="checkbox">Remeber Me</label>
         </div>
-        <button type="button" onclick="login()">LOG IN</button>
+        <button type="submit" name="login">LOG IN</button>
+        <p class="error"><?php echo $error;?></p>
         <hr>
         <div id="links">
             <a href="resetPassword.html">Forgot Password</a>
-            <a href="register.html">New User? Register</a>
+            <a href="register.php">New User? Register</a>
         </div>            
     </div>
     <div id="overlay">
