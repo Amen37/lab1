@@ -62,7 +62,6 @@ public function setCity($city){
     $this->city=$city;
 }
 public function setPassword($password){
-    password_hash($password,PASSWORD_DEFAULT);
     $this->password=$password;
 }
 public function setImagePath($imagePath){
@@ -71,6 +70,7 @@ public function setImagePath($imagePath){
   
 public function register ($pdo){
     $sql="INSERT INTO user (firstName,lastName,email,city,image,password) VALUES (:firstName,:lastName,:email,:city,:image,:password)";
+    $pass=password_hash($this->password,PASSWORD_DEFAULT);
     try {
     $stmt=$pdo->prepare($sql);
     $stmt->bindParam(':firstName',$this->fName);
@@ -78,7 +78,7 @@ public function register ($pdo){
     $stmt->bindParam(':email',$this->email);
     $stmt->bindParam(':city',$this->city);
     $stmt->bindParam(':image',$this->imagePath);
-    $stmt->bindParam(':password',$this->password);
+    $stmt->bindParam(':password',$pass);
     $stmt->execute();
     $stmt=null;    
     } catch (PDOException $e) {
@@ -97,7 +97,6 @@ public function login($pdo){
         session_start();
         $_SESSION['userId']=$row['user_id'];
         $this->id=$_SESSION['userId'];
-        $pdo->closeConnection();   
         $stmt=null; 
         return true;    
         
@@ -106,9 +105,11 @@ public function login($pdo){
         }   
     }
 }
-public function changePassword($pdo,$oldPassword,$newPassword){
+public function changePassword($pdo){
+    global $currentPassword;
+    global $newPassword;
     $hashedNewPassword=password_hash($newPassword,PASSWORD_DEFAULT);
-    if(password_verify($oldPassword,$this->password)){
+    if(password_verify($currentPassword,$this->password)){
         $sql="UPDATE user SET password=?";
         try {
             $stmt=$pdo->prepare($sql);
@@ -118,6 +119,7 @@ public function changePassword($pdo,$oldPassword,$newPassword){
             echo "success";
         } catch (PDOException $e) {
             echo $e->getMessage();
+            
         }
     }else{
         echo "fail";
@@ -131,7 +133,7 @@ public function logout ($pdo){
 
 public function uploadImage($file,$id)
 {
-$target_dir = "Image/";
+$target_dir = "../Image/";
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($file["name"],PATHINFO_EXTENSION));
 
@@ -142,7 +144,8 @@ $imageFileType = strtolower(pathinfo($file["name"],PATHINFO_EXTENSION));
     }
     $target_file = $target_dir."profilePhoto".$id.".".$imageFileType;
     move_uploaded_file($file["tmp_name"], $target_file);
-    return $target_file;
+    $savedTarget="Image/"."profilePhoto".$id.".".$imageFileType;
+    return $savedTarget;
 }
  
 }

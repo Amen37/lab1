@@ -22,7 +22,7 @@ $user= new User($_SESSION['userId'],$pdo);
     <div id="container">
         <h1>Profile</h1>
         
-            <img src="Image/john.png" alt="Profile">
+            <img src="<?php echo $user->getImagePath()?>" alt="Profile">
         
         <div>
             <p>First Name</p>

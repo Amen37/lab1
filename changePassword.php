@@ -20,20 +20,20 @@ $user= new User($_SESSION['userId'],$pdo);
     <link rel="stylesheet" href="Css/resetPassword.css">
 </head>
 <body>
-
+<form action="" id="changePasswordForm" method="POST">
     <div id="container">
         <h1>Change Password</h1>
         <div>
             <label for="curr_password">Current Password</label>
-            <input type="password" id="curr_password">
+            <input type="password" id="curr_password" name="curr_password">
         </div>
         <div>
             <label for="new_password">New Password</label>
-            <input type="password" id="new_password">
+            <input type="password" id="new_password" name="new_password" >
         </div>
         <div>
             <label for="conf_new_password">Confirm New Password</label>
-            <input type="password" id="conf_new_password">
+            <input type="password" id="conf_new_password" name="conf_new_password"> 
         </div>
         <p class="error"></p>
         <p class="success"></p>
@@ -44,6 +44,7 @@ $user= new User($_SESSION['userId'],$pdo);
     <div id="overlay">
 
     </div>
+    </form>
 </body>
 <script src="Js/common.js"></script>
 </html>

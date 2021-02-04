@@ -1,12 +1,4 @@
-<?php
-$error=$success="";
-require "./db_connect.php";
-require "./Interface/account.php";
-require "./Class/user.php";
-require "./Logic/function.php";
-require "Logic/main.logic.php";
 
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +8,7 @@ require "Logic/main.logic.php";
     <link rel="stylesheet" href="Css/register.css">
 </head>
 <body>
-    <form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST" enctype="multipart/form-data">
+    <form action="" id="registerForm" method="POST" enctype="multipart/form-data">
     <div id="container">
         <h1>Create Account</h1>
         <div>
@@ -43,12 +35,12 @@ require "Logic/main.logic.php";
             <label for="con_password">Confirm Password</label>
             <input type="password" name="con_password">
         </div>
-        <p class="error"><?php echo $error;?></p>
-        <p class="success"><?php echo $success;?></p>
+        <p class="error"></p>
+        <p class="success"></p>
         <input type="file" name="photo" id="photo">
         <button type="button" id="addPhoto" onclick="uploadPhoto()">Add Photo</button>
         <div class="row"> 
-            <button type="submit" id="register" name="register">Create Account</button>
+            <button type="button" id="register" name="register" onclick="createAccount()">Create Account</button>
             <button type="button" id="back" onclick="backToLogin()">Back</button>
         </div> 
        

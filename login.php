@@ -1,10 +1,10 @@
 <?php
-$error="";
-require "./db_connect.php";
-require "./Interface/account.php";
-require "./Class/user.php";
-require "./Logic/function.php";
-require "Logic/main.logic.php";
+// $error="";
+// require "./db_connect.php";
+// require "./Interface/account.php";
+// require "./Class/user.php";
+// require "./Logic/function.php";
+// require "Logic/main.logic.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,24 +15,24 @@ require "Logic/main.logic.php";
     <link rel="stylesheet" href="Css/login.css">
 </head>
 <body>
-    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
+    <form id="loginForm" name="loginForm" method="POST">
     <div id="container">
         <h1>Login</h1>
         <div>
             <label for="email">Email</label>
-            <input type="email" name="email">
+            <input type="email" name="email" id="email" required>
         </div>
         <div>
             <label for="password">Password</label>
-            <input type="password" name="password">
+            <input type="password" name="password" id="password" required>
         </div>
         <div id="check-box">
             
             <input type="checkbox" id="checkbox">
             <label for="checkbox">Remeber Me</label>
         </div>
-        <button type="submit" name="login">LOG IN</button>
-        <p class="error"><?php echo $error;?></p>
+        <button type="button" onclick="login()">LOG IN</button>
+        <p class="error"></p>
         <hr>
         <div id="links">
             <a href="resetPassword.html">Forgot Password</a>
