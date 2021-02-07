@@ -57,12 +57,13 @@ if(isset($_POST['type'])){
             $dbConnect->closeConnection();
             break;
         case 'logout':
+            session_start();
             $user= new User();
             $dbConnect= new DBconnect();
             $pdo= $dbConnect->getConnection();
             $user->logout($pdo);
             $dbConnect->closeConnection();
-            echo true;
+            echo "true";
             break;
         case 'changePassword':
             session_start();
@@ -78,6 +79,8 @@ if(isset($_POST['type'])){
             echo "Not executed";
             break;
     }
+}else {
+    echo "badddd";
 }
 
 ?>

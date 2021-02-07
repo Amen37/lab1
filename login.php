@@ -13,6 +13,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="Css/login.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 </head>
 <body>
     <form id="loginForm" name="loginForm" method="POST">
@@ -31,7 +33,7 @@
             <input type="checkbox" id="checkbox">
             <label for="checkbox">Remeber Me</label>
         </div>
-        <button type="button" onclick="login()">LOG IN</button>
+        <button type="button" name="loginButton" id="loginButton" >LOG IN</button>
         <p class="error"></p>
         <hr>
         <div id="links">
@@ -43,6 +45,7 @@
 
     </div>
 </form>
+
 </body>
 <script src="Js/common.js"></script>
 </html>

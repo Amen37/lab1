@@ -18,6 +18,7 @@ $user= new User($_SESSION['userId'],$pdo);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="Css/resetPassword.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 <form action="" id="changePasswordForm" method="POST">
@@ -37,7 +38,7 @@ $user= new User($_SESSION['userId'],$pdo);
         </div>
         <p class="error"></p>
         <p class="success"></p>
-        <button type="button" id="update" onclick=changePassword()>Update</button>
+        <button type="button" id="update">Update</button>
         <button type="button" id="back" onclick="backToHomePage()">Back</button>
                    
     </div>

@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Account</title>
     <link rel="stylesheet" href="Css/register.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-    <form action="" id="registerForm" method="POST" enctype="multipart/form-data">
+    <form id="registerForm" method="POST" enctype="multipart/form-data">
     <div id="container">
         <h1>Create Account</h1>
         <div>
@@ -40,7 +41,7 @@
         <input type="file" name="photo" id="photo">
         <button type="button" id="addPhoto" onclick="uploadPhoto()">Add Photo</button>
         <div class="row"> 
-            <button type="button" id="register" name="register" onclick="createAccount()">Create Account</button>
+            <button type="button" id="registerButton" name="register" >Create Account</button>
             <button type="button" id="back" onclick="backToLogin()">Back</button>
         </div> 
        

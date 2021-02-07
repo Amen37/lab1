@@ -1,0 +1,97 @@
+
+#container{
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    font-size: 18px;
+    border-radius: 15px;
+}
+@media screen and (max-width: 600px) {
+    #container{
+        width: 60%;
+    }
+}
+h1{
+    text-align: center;
+}
+#container div{
+    padding-left: 30px;
+    margin: 20px auto;
+}
+label,input{
+    display: block;
+    width: 90%;
+}
+label:hover{
+    color: #141313;
+}
+input{
+    height:25px;
+    margin-top:5px;
+    border: none;
+    border-bottom: 1px solid;
+}
+
+#check-box label{
+    position: relative;
+    top: -3px;
+}
+button#orderButton{
+    display: block;
+    margin: 10px auto ;
+    
+}
+button#orderButton:hover{
+    background-color:#3a5162;
+}
+a{
+    text-decoration: none;
+    color: grey;
+}
+a:hover{
+    color: rgb(4, 107, 4);
+}
+div#links{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-left: 10px;
+    padding-top: 2px;
+}
+@media screen and (max-width: 600px){
+    div#links{
+        display: block;
+        margin: 0px auto;
+    }
+    a{
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding-top: 10px;
+    }
+}
+
+
+hr{
+    width: 80%;
+    border-color: rgb(8, 148, 8);
+    display: block;
+    margin: 2px auto;
+}
+
+.error{
+    text-align: center;
+    color: rgb(219, 30, 30);
+}
+div#nav{
+    display: flex;
+    justify-items: right;
+    justify-content: space-around;
+    float: right;
+    width: 26%;
+    padding-top: 20px;
+    overflow: visible;
+}

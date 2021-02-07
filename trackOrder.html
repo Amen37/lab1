@@ -1,64 +1,20 @@
-<?php
-session_start();
-require "./db_connect.php";
-require "./Interface/account.php";
-require "./Class/user.php";
-if (!isset($_SESSION['userId'])) {
-    header("Location: login.php");
-}
-$dbConnect= new DBconnect();
-$pdo=$dbConnect->getConnection();
-$user= new User($_SESSION['userId'],$pdo);
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <!-- <link rel="stylesheet" href="Css/trackOrder.css"> -->
+    <title>Document</title>
     <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="Css/homePage.css">      
-    <link rel="stylesheet" href="Css/trackOrder.css"> 
-    <script src="https://kit.fontawesome.com/37280917ff.js" crossorigin="anonymous"></script>
+
     
+    <link rel="stylesheet" href="Css/trackOrder.css">
 </head>
 <body>
-    <div id="container">
-        <h1>Profile</h1>
-        
-            <img src="<?php echo $user->getImagePath()?>" alt="Profile">
-        
-        <div>
-            <p>First Name</p>
-            <p><?php echo $user->getFName()?></p>
-        </div>
-        <div>
-            <p>Last Name</p>
-            <p><?php echo $user->getLName();?></p>
-        </div>
-        <div>
-            <p>Email</p>
-            <p><?php echo $user->getEmail();?></p>
-        </div>
-        <div>
-            <p>City</p>
-            <p><?php echo $user->getCity();?></p>
-        </div>
-        <button type="submit" id="changePassword" onclick="updatePassword()"  >Change Password</button>
-        <button type="submit" id="logout"   >Logout</button>
-    </div>
-    <div id="overlay">
-
-    </div>
-    <!-- Button to Open the Modal -->
-    <div id="nav">
-    <button type="button" id="chechOrder" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"> Track your order </button> 
-    <button type="button" class="btn btn-primary btn-lg" onclick="orderFood()"> Order Food </button> 
-    </div>
+ <!-- Button to Open the Modal --> <button type="button" class="btn btn-primary d-flex mx-auto btn-lg" data-toggle="modal" data-target="#myModal"> Track your order </button> <!-- The Modal -->
 <div class="modal fade" id="myModal">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -98,5 +54,4 @@ $user= new User($_SESSION['userId'],$pdo);
     </div>
 </div>
 </body>
-<script src="Js/common.js"></script>
 </html>
